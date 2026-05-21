@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        body{
+               background-color: #060606;
+               color: #F5E8D8;
+               font-family: "Roboto", sans-serif;
+        }
+        a{
+    text-decoration: none;
+    color:#ce7d0b;
+    margin-right: 40px;
+}
+#logo{
+    margin-left: 30px;
+    font-size: 1rem;
+    font-size: 16px;
+}
+.navbar{
+    display: flex;
+    height:25px;
+    width: 100vw;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.links{
+    display:flex;
+}
+        h1{
+            text-align: center;
+            color:#ce7d0b
+        }
+                .outer{
+            display:flex;
+            height:500px;
+            width:100vw;
+            /* background-color: #754c1c; */
+            justify-content:space-around;
+        }
+        .inner{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            height:450px;
+            width:30%;
+            border:2px solid black;
+        }
+        img{
+            width:300px;
+            height: 300px;
+        }
+        h3{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <header>
+        <div class="navbar">
+            <a href="index.html" id="logo">Chandra's Portfolio</a>
+            <div class="links">
+            <div><a href="about.html">About</a></div>
+            <div><a href="services.html">Services</a></div>
+            <div><a href="works.html">Works</a></div>
+            <div><a href="contact.html">Contact me</a></div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>
+            Services
+        </h1>
+        <div class="outer">
+        <div class="inner">
+            <h3>Frontend Engineering</h3><br>
+            <img src="frontend.webp">
+            Single Page Application (SPA) development<br>
+            fluid responsive design (mobile-first)<br>
+            state management<br>
+            modern component lifecycle implementation<br>
+        </div>
+        <div class="inner">
+            <h3>Backend & API Development</h3><br>
+            <img src="backend2.webp">
+            Custom RESTful API design and implementation<br>
+            secure user authentication systems (OAuth, JWT, role-based access)<br>
+            server-side validation rules<br>
+        </div>
+        <div class="inner">
+            <h3>Database Architecture & Management</h3><br>
+            <img src="database.webp">
+            Relational and non-relational database design<br>
+            Data modeling and schema optimization<br>
+            Secure CRUD operations<br>
+        </div>
+    </div>
+
+    </main>
+        <br>
+    <div style="border:1px solid white;margin:5px 30px 5px 30px"></div>
+    <footer style="text-align: center;margin-bottom: 0px;">
+        <p>Made by Chandra</p>
+    </footer>
+</body>
+</html>

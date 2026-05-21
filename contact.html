@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me</title>
+    <style>
+        #logo{
+    margin-left: 30px;
+    font-size: 1rem;
+    font-size: 16px;
+}
+.navbar{
+    display: flex;
+    height:25px;
+    width: 100vw;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+.links{
+    display:flex;
+}
+        body{
+               background-color: #060606;
+               color: #F5E8D8;
+               font-family: "Roboto", sans-serif;
+        }
+        a{
+    text-decoration: none;
+    color:#ce7d0b;
+    margin-right: 40px;
+}
+.inner{
+    height: 400px;
+    width:30%;
+}
+.outer{
+    display:flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.inner{
+    border:2px solid white;
+    color:#F5E8D8;
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+            <header>
+        <div class="navbar">
+            <a href="index.html" id="logo">Chandra's Portfolio</a>
+            <div class="links">
+            <div><a href="about.html">About</a></div>
+            <div><a href="services.html">Services</a></div>
+            <div><a href="works.html">Works</a></div>
+            <div><a href="contact.html">Contact me</a></div>
+            </div>
+        </div>
+    </header>
+    <main>
+    <div class="outer">
+        <div class="inner">
+            <br><br>
+            Fill in the details and i will reach you out soon.
+            <br><br><br>
+<form id="contactForm">
+  <p>Enter your name</p>
+  <input type="text" name="name" required>
+
+  <p>Enter your phone number</p>
+  <input type="tel" name="phone" required>
+
+  <p>Enter your email id</p>
+  <input type="email" name="email" required>
+<br><br>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Stop the screen from executing an ugly full-page reload
+    
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    try {
+        const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+            alert('Details sent successfully!');
+            e.target.reset(); // Safely clears out form fields
+        } else {
+            alert('Error: ' + result.message);
+        }
+    } catch (error) {
+        console.error('Submission error:', error);
+        alert('An error occurred. Please try again.');
+    }
+});
+</script>
+</main>
+    <br>
+    <div style="border:1px solid white;margin:5px 30px 5px 30px"></div>
+    <footer style="text-align: center;margin-bottom: 0px;">
+        <p>Made by Chandra</p>
+    </footer>
+    
+</body>
+</html>
